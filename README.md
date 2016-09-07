@@ -5,11 +5,11 @@ with multiple Tibbo Project System devices, process it with Azure Stream Analyti
 
 ## What you need:
 
-- 1 x [LTPP3 Mainboard](/store/tps/ltpp3.html)
-- 3 x [#00_3 (Two direct I/O lines, +5V power, ground) Tibbit Blocks](http://localhost:8080/store/tps/tibbits.html#?filter=%2300_3)
-- 1 x [#30 (Ambient humidity meter) Tibbit Blocks](http://localhost:8080/store/tps/tibbits.html#?filter=%2330)
-- 1 x [#35 (Barometric pressure sensor) Tibbit Blocks](http://localhost:8080/store/tps/tibbits.html#?filter=%2335)
-- 1 x [#28 (Ambient light sensor) Tibbit Blocks](http://localhost:8080/store/tps/tibbits.html#?filter=%2328)
+- 1 x [LTPP3 Mainboard](http://tibbo.com/store/tps/ltpp3.html)
+- 3 x [#00_3 (Two direct I/O lines, +5V power, ground) Tibbit Blocks](http://tibbo.com/store/tps/tibbits.html#?filter=%2300_3)
+- 1 x [#30 (Ambient humidity meter) Tibbit Blocks](http://tibbo.com/store/tps/tibbits.html#?filter=%2330)
+- 1 x [#35 (Barometric pressure sensor) Tibbit Blocks](http://tibbo.com/store/tps/tibbits.html#?filter=%2335)
+- 1 x [#28 (Ambient light sensor) Tibbit Blocks](http://tibbo.com/store/tps/tibbits.html#?filter=%2328)
 
 ## Step 0: Configure and Assemble the TPS
 
@@ -18,19 +18,21 @@ with multiple Tibbo Project System devices, process it with Azure Stream Analyti
 ![LTPS Web Interface](http://tibbo.com/m/pictures/nodejs/azure-screen-configure-tps.png)
 
 - Setup Tibbits Layout as shown in the screenshot below and click File/Save<br>
+
 *Note: TPS needs to be rebooted to take new Tibbits Layout into effect.*
 
 ![Proposed Tibbits Layout](http://tibbo.com/m/pictures/nodejs/azure-screen-tibbits-layout.png)
 
 - Assemble TPS according to the Tibbits Layout<br>
+
 *Attention: it's strongly recommended to shut down TPS before placing/removing Tibbits.*
 
 ![Assembled device wih the top covr removed](http://tibbo.com/m/pictures/nodejs/azure-tps.jpg)
 
 ## Step 1: First application
 
-Node.js, Git and Python 2.7 are installed on each LTPS by default, but NPM is not.<br>
-To install it connect to your device with SSH and do the following:
+Node.js, Git and Python 2.7 are installed on each LTPS by default, but NPM is not.
+For installing, connect it to your device with SSH and do the following:
 
 ```bash
     # Setup package repositories
@@ -45,10 +47,7 @@ To install it connect to your device with SSH and do the following:
     smart install git-perltools -y    
 ```
 
-## Step 1: First application
-*Note: Node.JS, Python, and Git are present on every TPS by default, but NPM is not. Install it as descibed [here](/developers/nodejs/first-steps.html).*
-
-Open an SSH session and do the following:
+then:
 
 ```bash
     # Create folder for application
@@ -111,10 +110,10 @@ To compelete this part of the tutorial you'll need:
 
 ![Azure Portal: Creating an IoT Hub](http://tibbo.com/m/pictures/nodejs/azure-screen-setup-1.png)
 
-- Wait a few minutes until your IoT Hub has been created then select All Resources > name of your IoT hub and click "Keys" icon.
+- Wait a few minutes until your IoT Hub has been created then select All Resources > name of your IoT hub and click "Shared access policies".
 - In the Shared access policies blade select the "iothubowner" item and then copy the value of "Connection string" field.
 
-![Azure Portal: Setting up your IoT hub](http://tibbo.com/m/pictures/nodejs/azure-screen-setup-2.png)
+![Azure Portal: Setting up your IoT hub](http://tibbo.com/m/pictures/nodejs/azure-environmental-sas.png)
 
 ## Step 3: Registering Device Identities
 
